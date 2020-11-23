@@ -2,7 +2,7 @@ package com.slmanju.crud;
 
 import java.util.List;
 
-public interface BookRepository {
+public interface BookService {
 
   void save(Book book);
 

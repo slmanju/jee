@@ -2,19 +2,23 @@ package com.slmanju.crud;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import java.util.List;
 
 @Stateless
 public class BookFacade {
 
   @Inject
-  private BookRepository bookRepository;
+  private BookService bookService;
 
-  public Book save(Book book) {
-    return bookRepository.save(book);
+  public void save(Book book) {
+    bookService.save(book);
   }
 
   public Book findBook(Integer id) {
-    return bookRepository.findBook(id);
+    return bookService.find(id);
   }
 
+  public List<Book> findAll() {
+    return bookService.findAll();
+  }
 }
